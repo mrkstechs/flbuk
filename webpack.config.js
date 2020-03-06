@@ -45,12 +45,6 @@ module.exports = env => {
                   name: "[name].[ext]",
                   outputPath: '../imgs/'
                 }
-              },
-              {
-                loader: "image-webpack-loader",
-                options: {
-                  bypassOnDebug: true
-                }
               }
             ]
           },
