@@ -1,0 +1,17 @@
+@mixin absoCenter($width) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $width;
+    transform: translate(-50%, -50%);
+}
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin backImgFull($img) {
+    background-image: url($img);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
