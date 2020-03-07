@@ -14,9 +14,6 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		<?php
-			echo do_shortcode( '[mc4wp_form id="7"]' );
-		?>
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'flb' ) ); ?>">
 				<?php

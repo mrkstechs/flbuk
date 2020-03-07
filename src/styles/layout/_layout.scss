@@ -3,8 +3,20 @@
 @import 'pages/pages';
 
 #content{
-    height: 100vh;
+    min-height: 73vh;
     #primary{
         height: 100%;
+        .page{
+            padding: 8vh;
+            .entry-header{
+                text-align: center;
+                .entry-title{
+                    font-weight: 300;
+                }
+            }
+            .entry-content{
+                padding: 2em 0 0 0;
+            }
+        }
     }
 }

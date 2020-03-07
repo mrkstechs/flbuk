@@ -132,11 +132,11 @@ function flb_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_style( 'flb-main-style', get_template_directory_uri() . '/public/css/app.css' );
+	//wp_enqueue_style( 'flb-main-style', get_template_directory_uri() . '/public/css/app.css' );
 
-	wp_enqueue_script( 'flb-scripts', get_template_directory_uri() . '/public/js/app.js', array(), false );
+	//wp_enqueue_script( 'flb-scripts', get_template_directory_uri() . '/public/js/app.js', array(), false );
 
-	//wp_enqueue_script( 'flb-scripts', 'http://localhost:8080/app.js', array(), '20200225' , true );
+	wp_enqueue_script( 'flb-scripts', 'http://localhost:8080/app.js', array(), '20200225' , true );
 }
 add_action( 'wp_enqueue_scripts', 'flb_scripts' );
 

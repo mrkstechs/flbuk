@@ -2,10 +2,12 @@
     position: relative;
     height: 100%;
     #logo-wrap{
+        position: relative;
         display: flex;
         justify-content: center;
         height: 30vh;
         padding-top: 3em;
+        z-index: 1;
         svg{
             width: 80%;
             margin-bottom: -2em;
@@ -15,16 +17,103 @@
         }
     }
     #cream-bg{
-        position: absolute;
-        left: 0;
-        bottom: 0;
         width: 100%;
-        height: 70vh;
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         align-items: center;
         background-color: $cream;
-        z-index: -1;
+        z-index: 0;
+        .advert-container{
+            width: 40%;
+            margin: 0 auto;
+            .wp-block-gallery{
+                ul{
+                    li{
+                        position: relative;
+                        margin: 0 .2em;
+                        padding: 1em;
+                        z-index: 1;
+                    }
+                    li::after{
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        content: "";
+                        width: 100%;
+                        z-index: -1;
+                        transform: scale(0);
+                        transition: transform .3s ease;
+                        animation-duration: .4s;
+                        animation-timing-function: ease;
+                        animation-delay: 0;
+                        animation-fill-mode: forwards;
+                        border: solid .2em rgba( #c1bbb4, 0.45);
+                        box-shadow: inset 0 0 1.5em #c1bbb4;
+
+                    }
+                    li.active::after{
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+        .advert-buttons{
+            width: 40%;
+            margin: 0 auto;
+            .wp-block-column{
+                @include flexCenter;
+                .ad-btn{
+                    width: 1em;
+                    height: 1em;
+                    border: solid 1px red;
+                }
+            }
+        }
+        .modal-container{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            overflow: hidden;
+            z-index: 3;
+            .modal-inner{
+                position: relative;
+                .modal{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    @include flexCenter;
+                    width: 100%;
+                    height: 100vh;
+                    padding: 2em 0;
+                    opacity: 0;
+                    transform: scale(0);
+                    transition: opacity .7s, transform .7s;
+                    background-color: rgba($black, 0.8);
+                    .close{
+                        position: absolute;
+                        top: 0em;
+                        right: 1em;
+                        font-size: 5em;
+                        color: $white;
+                    }
+                    .wp-block-image{
+                        img{
+                            display: block;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+                .modal.active{
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+        }
         p{
             display: block;
             width: 100%;
@@ -41,7 +130,7 @@
                 top: -50%;
                 left: 3%;
                 @include backImgFull('/wp-content/themes/flb/public/imgs/woman.svg');
-                width: 4em;
+                width: 3em;
                 height: 6em;
             }
             .mc4wp-form{
@@ -69,4 +158,10 @@
             }
         }
     }
+}
+@keyframes grow{
+    100%{transform: scale(1);}
+}
+@keyframes shrink{
+    100%{transform: scale(0);}
 }
