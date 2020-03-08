@@ -1,5 +1,6 @@
 import './styles/app.scss';
-import'./imgs/woman.svg';
+import './imgs/woman.svg';
+import './imgs/mail.svg';
 
 const baseUrl = window.location.origin;
 const url = window.location.href;

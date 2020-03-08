@@ -65,9 +65,12 @@
             .wp-block-column{
                 @include flexCenter;
                 .ad-btn{
-                    width: 1em;
-                    height: 1em;
-                    border: solid 1px red;
+                    @include flexCenter;
+                    width: 3.5em;
+                    height: 2.5em;
+                    @include backImgFull('/wp-content/themes/flb/public/imgs/mail.svg');
+                    text-decoration: none;
+                    color: $grey;
                 }
             }
         }
