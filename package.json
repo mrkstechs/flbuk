@@ -28,7 +28,7 @@
     "browser-sync-webpack-plugin": "^2.2.2",
     "css-loader": "^3.2.1",
     "file-loader": "^4.3.0",
-    "gsap": "^3.2.0",
+    "gsap": "^3.6.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.13.0",
     "postcss-loader": "^3.0.0",
